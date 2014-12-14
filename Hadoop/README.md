@@ -137,3 +137,13 @@ distcp是作为一个MapReduce作业来实现的
 
 % hadoop distcp hftp://namenode1:50070/foot hdfs://namenode2/bar
 ```
+
+# MapReduce的工作机制(167-186)
+### `运行机制(167)(图6-1)`
+客户端：提交MapReduce作业
+
+jobtracker:协调作业的运行,jobtracker是一个Java应用程序，它的主类是JobTracker。
+
+tasktracker: 运行作业划分后的任务,tasktracker是Java应用程序，它的主类Tasktracker。
+
+分布式文件系统：一般为HDFS ，用来与其他实体间共享作业文件
